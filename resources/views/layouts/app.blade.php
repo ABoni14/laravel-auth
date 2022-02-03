@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Boolpress admin @yield("title")</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -28,7 +28,8 @@
                 </a>
 
                 @auth()
-                    <a href="{{route("admin.posts.index")}}">Post</a>
+                    <a href="{{route("admin.posts.index")}}" class="mr-3">Posts</a>
+                    <a href="{{route("admin.posts.create")}}">Create Post</a>
                 @endauth
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
